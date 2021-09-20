@@ -13,7 +13,11 @@ function Registro() {
     if(userV.email.length == 0 || userV.password.length == 0 || userV.confirmPassword.length == 0 || userV.address.length == 0 || userV.city.length == 0 || userV.state.length == 0 || userV.zip.length == 0){
         alert("Llene todos los campos");
     }else{
-        validation(userV.email,userV.password);
+        if(userV.password == userV.confirmPassword){
+            validation(userV.email,userV.password);
+        }else{
+            alert("Su contraseña no es igual")
+        }
     }
 }
 
@@ -27,7 +31,7 @@ function validation(email,password){
         alert('El correo no es valido');
     }
     //password
-    var expPass = /^(?=.*[!@#$%^&*])/;
+    var expPass = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{7,}$/;
     var esvalidoP = expPass.test(password);
     if(esvalidoP == true){
         alert('Contraseña segura');
