@@ -30,27 +30,31 @@
                     </div>
                     <div class="col-md-6">
                         <label for="inputPassword4" class="form-label">Confirmar contraseña</label>
-                        <input type="password" class="form-control" id="inputPassword4">
+                        <input type="password" class="form-control" id="inputPassword4_1">
                     </div>
+                    <li style="list-style: none;">Utilizar mas de 7 caracteres</li>
+                    <li style="list-style: none;">Utilizar al menos un caracter especial (!@#$%^&*)</li>
+                    <li style="list-style: none;">Utilizar mayusculas y minusculas</li>
                     <div class="col-12">
                         <label for="inputAddress" class="form-label">Dirección</label>
                         <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                     </div>
-                    <div class="col-12">
+                    <!-- <div class="col-12">
                         <label for="inputAddress2" class="form-label">Dirección 2</label>
                         <input type="text" class="form-control" id="inputAddress2"
                         placeholder="Apartment, studio, or floor">
-                    </div>
+                    </div> -->
                     <div class="col-md-6">
                         <label for="inputCity" class="form-label">Ciudad</label>
                         <input type="text" class="form-control" id="inputCity">
                     </div>
                     <div class="col-md-4">
                         <label for="inputState" class="form-label">Estado</label>
-                        <select id="inputState" class="form-select">
-                            <option selected>Choose...</option>
-                            <option>...</option>
-                        </select>
+                        <input type="text" class="form-control" id="inputState">
+                        <!-- <select id="inputState" class="form-select">
+                            <option>Valle del cauca</option>
+                            <option>Cauca</option>
+                        </select> -->
                     </div>
                     <div class="col-md-2">
                         <label for="inputZip" class="form-label">Codigo postal</label>
@@ -69,7 +73,7 @@
                         </div>
                     </div> -->
                     <div class="col-12" style="justify-content: center; display: flex;">
-                        <button type="submit" class="btn btn-primary">Sign in</button>
+                        <button type="submit" class="btn btn-primary" onclick="Registro()">Registrarse</button>
                     </div>
                 </form>
             </div>
