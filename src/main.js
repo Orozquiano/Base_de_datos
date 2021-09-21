@@ -8,12 +8,15 @@ function Registro() {
         // address2: document.getElementById('inputAddress2').value,
         city: document.getElementById('inputCity').value,
         state: document.getElementById('inputState').value,
-        zip: document.getElementById('inputZip').value
+        zip: document.getElementById('inputZip').value,
+        img: document.getElementById('formFile')
     }
     if(userV.email.length == 0 || userV.password.length == 0 || userV.confirmPassword.length == 0 || userV.address.length == 0 || userV.city.length == 0 || userV.state.length == 0 || userV.zip.length == 0){
         alert("Llene todos los campos");
+
     }else{
         if(userV.password == userV.confirmPassword){
+            validateFile(userV.img);
             validation(userV.email,userV.password);
         }else{
             alert("Su contraseña no es igual")
@@ -40,3 +43,24 @@ function validation(email,password){
     }
 
 }
+
+function validateFile(img) 
+        {
+            var allowedExtension = ['jpeg', 'jpg', 'png', 'gif'];
+            var fileExtension = img.value.split('.').pop().toLowerCase();
+            var isValidFile = false;
+
+                for(var index in allowedExtension) {
+
+                    if(fileExtension === allowedExtension[index]) {
+                        isValidFile = true; 
+                        break;
+                    }
+                }
+
+                if(!isValidFile) {
+                    alert('La imagen debe ser : *.' + allowedExtension.join(', *.'));
+                }
+
+                return isValidFile;
+        }
